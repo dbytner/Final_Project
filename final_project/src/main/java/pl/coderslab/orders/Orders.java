@@ -55,6 +55,7 @@ public class Orders {
     }
 
     public Date getCreated() {
+        created = new java.sql.Date(new java.util.Date().getTime());
         return created;
     }
 
@@ -63,6 +64,7 @@ public class Orders {
     }
 
     public Date getUpdated() {
+        updated = new java.sql.Date(new java.util.Date().getTime());
         return updated;
     }
 

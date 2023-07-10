@@ -13,7 +13,7 @@ public class Contractors {
     private String address;
     private String phone;
     private String nip;
-    private String bankAccount;
+    private String poc;
 
     public Long getId() {
         return id;
@@ -63,11 +63,11 @@ public class Contractors {
         this.nip = nip;
     }
 
-    public String getBankAccount() {
-        return bankAccount;
+    public String getPoc() {
+        return poc;
     }
 
-    public void setBankAccount(String bankAccount) {
-        this.bankAccount = bankAccount;
+    public void setPoc(String poc) {
+        this.poc = poc;
     }
 }

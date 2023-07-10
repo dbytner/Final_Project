@@ -35,7 +35,7 @@
             <td>${contractor.address}</td>
             <td>${contractor.phone}</td>
             <td>${contractor.nip}</td>
-            <td>${contractor.bankAccount}</td>
+            <td>${contractor.poc}</td>
             <td>
                 <a href="/contractors/delete-confirm/${contractor.id}">delete</a>
                 <a href="/contractors/edit/${contractor.id}">edit</a>
