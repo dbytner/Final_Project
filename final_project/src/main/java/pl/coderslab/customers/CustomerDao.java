@@ -30,7 +30,7 @@ public class CustomerDao {
         entityManager.remove(entityManager.contains(customer) ? customer: entityManager.merge(customer));
     }
 
-    public List<Customer> findAllHeroes(){
+    public List<Customer> findAllCustomers(){
         return entityManager.createQuery("SELECT c FROM Customer c").getResultList();
     }
 }
