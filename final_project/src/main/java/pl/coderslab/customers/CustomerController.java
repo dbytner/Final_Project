@@ -33,7 +33,7 @@ public class CustomerController {
     @GetMapping("/list")
     public String list(Model model) {
         model.addAttribute("customers", customerDao.findAllCustomers());
-        return "customer/list";
+        return "customer/customerList";
     }
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable long id, Model model) {
