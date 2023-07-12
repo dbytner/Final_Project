@@ -13,8 +13,7 @@ public class Customer {
     private String email;
     private String address;
     private String phone;
-    private String nip;
-    private String bankAccount;
+
 
 
     public Long getId() {
@@ -57,21 +56,7 @@ public class Customer {
         this.phone = phone;
     }
 
-    public String getNip() {
-        return nip;
-    }
 
-    public void setNip(String nip) {
-        this.nip = nip;
-    }
-
-    public String getBankAccount() {
-        return bankAccount;
-    }
-
-    public void setBankAccount(String bankAccount) {
-        this.bankAccount = bankAccount;
-    }
 
 
 }

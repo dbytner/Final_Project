@@ -38,11 +38,11 @@ public class CustomerController {
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable long id, Model model) {
         model.addAttribute("customers", customerDao.find(id));
-        return "customer/edit";
+        return "customer/customerEdit";
     }
 
     @PostMapping("/edit")
-    public String updateCategory(Customer customer) {
+    public String updateCustomer(Customer customer) {
         customerDao.update(customer);
         return "redirect:/customer/list";
     }
