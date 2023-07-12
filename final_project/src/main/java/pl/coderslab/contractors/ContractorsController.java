@@ -22,7 +22,7 @@ public class ContractorsController {
     @GetMapping("/add")
     public String test(Model model) {
         model.addAttribute("contractors", new Contractors());
-        return "contractors/form";
+        return "contractors/contractorsAdd";
     }
 
     @PostMapping("/add")
@@ -34,7 +34,7 @@ public class ContractorsController {
     @GetMapping("/list")
     public String list(Model model) {
         model.addAttribute("contractors", contractorsDao.findAllContractors());
-        return "contractors/list";
+        return "contractors/contractorsList";
     }
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable long id, Model model) {
@@ -43,7 +43,7 @@ public class ContractorsController {
     }
 
     @PostMapping("/edit")
-    public String updateCategory(Contractors contractors) {
+    public String updateContractors(Contractors contractors) {
         contractorsDao.update(contractors);
         return "redirect:/contractors/list";
     }
