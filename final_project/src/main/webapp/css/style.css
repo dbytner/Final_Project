@@ -4,8 +4,8 @@
 :root {
   --link-color: #00ff0d;
   --light-link-color: #fffffa;
-  --background-color: #4b4c4a;
-  --lighter-background-color: #5a615f;
+  --background-color: rgba(255, 255, 255, 0.58);
+  --lighter-background-color: #00ff0d;
   --lighter-text-color: #9fa292;
   --dark-text: #ff0090;
   --blue: #007bff;
