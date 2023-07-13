@@ -1,6 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +24,7 @@
       <span>Kaktus</span>
     </a>
     <div class="d-flex justify-content-around">
-      <h4 class="text-light mr-3">Imię</h4>
+      <h4>Imię</h4>
       <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
     </div>
   </nav>
@@ -82,50 +83,47 @@
       </li>
     </ul>
 
-    <div class="m-4 p-3 width-medium">
+    <div class="m-4 p-3 width-medium text-color-darker">
       <div class="dashboard-content border-dashed p-3 m-4 view-height">
-        <div class="row border-bottom border-3 p-1 m-1">
-          <div class="col noPadding">
-            <h3 class="color-header text-uppercase">LISTA KLIENTÓW</h3>
+        <form method="post" action="/orders/add">
+          <div class="mt-4 ml-4 mr-4">
+            <div class="row border-bottom border-3">
+              <div class="col"><h3 class="color-header text-uppercase">Nowe zamówienie</h3></div>
+              <div class="col d-flex justify-content-end mb-2">
+                <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
+              </div>
+            </div>
+            <form:form modelAttribute="orders">
+              <table class="table borderless">
+                <tbody>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">Nazwa</th>
+                  <td class="col-7">
+                    <form:select path="name" items="${ordersType}" multiple="false"></form:select>
+                  </td>
+                </tr>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">Opis</th>
+                  <td class="col-7">
+                    <form:input name="description" class="w-100 p-1" value="" path="description"/>
+                  </td>
+                </tr>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">Status</th>
+                  <td class="col-7">
+                    <form:select path="status" items="${ordersStatus}" multiple="false"></form:select>
+                  </td>
+                </tr>
+                <tr class="d-flex">
+                  <td class="col-7">
+                  <form:hidden name="customer" class="w-100 p-1" value="${customer.id}" path="customer"/>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </form:form>
           </div>
-          <div class="col d-flex justify-content-end mb-2 noPadding">
-            <a href="/customer/add" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Dodaj klienta</a>
-          </div>
-        </div>
-
-        <div class="schedules-content">
-          <table class="table border-bottom">
-            <thead>
-            <tr class="d-flex">
-              <th class="col-1">ID</th>
-              <th class="col-2">NAZWA</th>
-              <th class="col-2">EMAIL</th>
-              <th class="col-2">ADRES</th>
-              <th class="col-2">TELEFON</th>
-              <th class="col-3 center">AKCJE</th>
-            </tr>
-            </thead>
-            <tbody class="text-color-lighter">
-            <c:forEach var="customer" items="${customers}">
-              <tr class="d-flex">
-                <td class="col-1">${customer.id}</td>
-                <td class="col-2">${customer.name}</td>
-                <td class="col-2">${customer.email}</td>
-                <td class="col-2">${customer.address}</td>
-                <td class="col-2">${customer.phone}</td>
-                <td class="col-3 d-flex align-items-center justify-content-center flex-wrap">
-                  <a href="/customer/delete-confirm/${customer.id}" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
-                  <a href="/customer/edit/${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Edytuj</a>
-                  <a href="/orders/add/${customer.id}" class="btn btn-info rounded-0 text-light m-1">Dodaj zamówienie</a>
-                  <a href="/app/recipe/details?id=${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Dodaj fakturę</a>
-                  <a href="/app/recipe/details?id=${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Zamówienia</a>
-                  <a href="/app/recipe/details?id=${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Faktury</a>
-                </td>
-              </tr>
-            </c:forEach>
-            </tbody>
-          </table>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -140,3 +138,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+

@@ -29,6 +29,13 @@ public class OrdersController {
         return "orders/ordersAdd";
     }
 
+    @GetMapping("/add/{id}")
+    public String add(@PathVariable long id, Model model) {
+        model.addAttribute("orders", new Orders());
+        model.addAttribute("customer", customerDao.find(id));
+        return "orders/ordersAddCustomer";
+    }
+
     @PostMapping("/add")
     public String save(Orders orders) {
         orders.setCreated(orders.getCreated());
