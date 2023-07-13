@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/order/list">
+                <a class="nav-link" href="/orders/list">
                     <span>Zlecenia</span>
                     <i class="fas fa-angle-right"></i>
                 </a>

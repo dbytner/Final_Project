@@ -27,7 +27,7 @@ public class OrdersController {
     public String test(Model model) {
         model.addAttribute("orders", new Orders());
         model.addAttribute("customers", customerDao.findAllCustomers());
-        return "orders/form";
+        return "orders/ordersAdd";
     }
 
     @PostMapping("/add")
@@ -40,7 +40,7 @@ public class OrdersController {
     @GetMapping("/list")
     public String list(Model model) {
         model.addAttribute("orders", ordersDao.findAllOrders());
-        return "orders/list";
+        return "orders/ordersList";
     }
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable long id, Model model) {
@@ -66,5 +66,11 @@ public class OrdersController {
         Orders orders = ordersDao.find(id);
         ordersDao.delete(orders);
         return "redirect:/orders/list";
+    }
+
+    @GetMapping("/details/{id}")
+    public String ordersDetails(@PathVariable long id, Model model) {
+        model.addAttribute("orders", ordersDao.find(id));
+        return "orders/ordersDetails";
     }
 }
