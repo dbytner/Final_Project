@@ -2,12 +2,12 @@
 /*---- Main style ----*/
 /*------------------------------*/
 :root {
-  --link-color: #00ff0d;
-  --light-link-color: #ffffff;
-  --background-color: rgba(255, 255, 255, 0.58);
-  --lighter-background-color: #00ff0d;
+  --link-color: #ff6600;
+  --light-link-color: #fffffa;
+  --background-color: #4b4c4a;
+  --lighter-background-color: #5a615f;
   --lighter-text-color: #9fa292;
-  --dark-text: #ff0090;
+  --dark-text: #000000;
   --blue: #007bff;
   --yellow: #ffc107;
   --green: #1e7e34;
@@ -34,7 +34,7 @@ p {
 }
 
 .bg-light {
-background: #00ff51;
+background: #EAEAEA;
 }
 
 .noPadding {

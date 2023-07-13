@@ -99,11 +99,9 @@
             <tr class="d-flex">
               <th class="col-1">ID</th>
               <th class="col-2">NAZWA</th>
-              <th class="col-1">EMAIL</th>
-              <th class="col-2">ADRES</th>
-              <th class="col-1">TELEFON</th>
-              <th class="col-1">NIP</th>
-              <th class="col-1">KONTAKT</th>
+              <th class="col-2">EMAIL</th>
+              <th class="col-2">TELEFON</th>
+              <th class="col-2">KONTAKT</th>
               <th class="col-3 center">AKCJE</th>
             </tr>
             </thead>
@@ -112,12 +110,11 @@
               <tr class="d-flex">
                 <td class="col-1">${contractor.id}</td>
                 <td class="col-2">${contractor.name}</td>
-                <td class="col-1">${contractor.email}</td>
-                <td class="col-2">${contractor.address}</td>
-                <td class="col-1">${contractor.phone}</td>
-                <td class="col-1">${contractor.nip}</td>
-                <td class="col-1">${contractor.poc}</td>
+                <td class="col-2">${contractor.email}</td>
+                <td class="col-2">${contractor.phone}</td>
+                <td class="col-2">${contractor.poc}</td>
                 <td class="col-3 d-flex align-items-center justify-content-center flex-wrap">
+                  <a href="/contractors/details/${contractor.id}" class="btn btn-danger rounded-0 text-light m-1">Szczegóły</a>
                   <a href="/contractors/delete-confirm/${contractor.id}" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
                   <a href="/contractors/edit/${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Edytuj</a>
                   <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-info rounded-0 text-light m-1">Dodaj zlecenie</a>

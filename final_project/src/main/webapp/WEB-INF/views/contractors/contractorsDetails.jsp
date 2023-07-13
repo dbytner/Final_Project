@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -85,15 +84,15 @@
 
     <div class="m-4 p-3 width-medium text-color-darker">
       <div class="dashboard-content border-dashed p-3 m-4 view-height">
-        <form method="post" action="/customer/edit">
+        <form method="get" action="/contractors/list">
           <div class="mt-4 ml-4 mr-4">
             <div class="row border-bottom border-3">
-              <div class="col"><h3 class="color-header text-uppercase">Edycja klienta</h3></div>
+              <div class="col"><h3 class="color-header text-uppercase">Szczegóły kontrahenta</h3></div>
               <div class="col d-flex justify-content-end mb-2">
-                <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
+                <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Powrót</button>
               </div>
             </div>
-            <form:form modelAttribute="customers">
+            <form:form modelAttribute="contractors">
               <form:hidden path="id"/>
               <table class="table borderless">
                 <tbody>
@@ -121,6 +120,18 @@
                     <form:input name="phone" class="w-100 p-1" value="" path="phone"/>
                   </td>
                 </tr>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">NIP</th>
+                  <td class="col-7">
+                    <form:input name="nip" class="w-100 p-1" value="" path="nip"/>
+                  </td>
+                </tr>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">Kontakt</th>
+                  <td class="col-7">
+                    <form:input name="poc" class="w-100 p-1" value="" path="poc"/>
+                  </td>
+                </tr>
                 </tbody>
               </table>
             </form:form>
@@ -140,5 +151,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-
-
