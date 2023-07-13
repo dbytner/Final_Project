@@ -71,7 +71,7 @@
                         </a>
                     </div>
                     <div class="menu-item border-dashed">
-                        <a href="/ordes/add">
+                        <a href="/orders/add">
                             <i class="far fa-plus-square icon-plus-square"></i>
                             <span class="title">dodaj zamówienie</span>
                         </a>

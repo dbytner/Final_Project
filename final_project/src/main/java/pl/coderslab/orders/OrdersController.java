@@ -2,14 +2,13 @@ package pl.coderslab.orders;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.customers.Customer;
 import pl.coderslab.customers.CustomerDao;
 
 import java.awt.print.Book;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequestMapping("/orders")
@@ -72,5 +71,15 @@ public class OrdersController {
     public String ordersDetails(@PathVariable long id, Model model) {
         model.addAttribute("orders", ordersDao.find(id));
         return "orders/ordersDetails";
+    }
+
+    @ModelAttribute("ordersType")
+    public List<String> ordersType() {
+        return Arrays.asList("Wizytówki", "Banery", "Ulotki", "Plakaty", "Rollup");
+    }
+
+    @ModelAttribute("ordersStatus")
+    public List<String> ordersStatus() {
+        return Arrays.asList("Rozpoczęte", "W trakcie realizacji", "Montaż", "U klienta", "Czeka na płatność", "Zakończone");
     }
 }
