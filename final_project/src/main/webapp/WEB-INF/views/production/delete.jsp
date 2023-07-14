@@ -19,7 +19,7 @@
     <span>Czy na pewno chcesz usunąć???</span>
     <i class="fas fa-angle-right"></i>
 </a>
-<a href="/orders/delete/${orders.id}">Potwierdź</a>
-<a href="/orders/list/">Anuluj</a>
+<a href="/production/delete/${productions.id}">Potwierdź</a>
+<a href="/production/list/">Anuluj</a>
 </body>
 </html>

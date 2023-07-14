@@ -52,7 +52,7 @@ public class OrdersController {
     public String edit(@PathVariable long id, Model model) {
         model.addAttribute("orders", ordersDao.find(id));
         model.addAttribute("customers", customerDao.findAllCustomers());
-        return "orders/edit";
+        return "orders/ordersEdit";
     }
 
     @PostMapping("/edit")

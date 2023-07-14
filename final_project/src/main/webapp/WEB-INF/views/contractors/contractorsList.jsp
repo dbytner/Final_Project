@@ -51,14 +51,14 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/order/list">
-          <span>Zlecenia</span>
+        <a class="nav-link" href="/orders/list">
+          <span>Zamówienia</span>
           <i class="fas fa-angle-right"></i>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/production/list">
-          <span>Zamówienia</span>
+          <span>Zlecenia</span>
           <i class="fas fa-angle-right"></i>
         </a>
       </li>
@@ -117,7 +117,7 @@
                   <a href="/contractors/details/${contractor.id}" class="btn btn-danger rounded-0 text-light m-1">Szczegóły</a>
                   <a href="/contractors/delete-confirm/${contractor.id}" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
                   <a href="/contractors/edit/${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Edytuj</a>
-                  <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-info rounded-0 text-light m-1">Dodaj zlecenie</a>
+                  <a href="/production/add/${contractor.id}" class="btn btn-info rounded-0 text-light m-1">Dodaj zlecenie</a>
                   <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Dodaj fakturę</a>
                   <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Zlecenia</a>
                   <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Faktury</a>

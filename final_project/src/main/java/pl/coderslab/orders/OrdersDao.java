@@ -6,6 +6,7 @@ import pl.coderslab.customers.Customer;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -22,6 +23,7 @@ public class OrdersDao {
         return entityManager.find(Orders.class ,id);
     }
 
+
     public void update(Orders orders){
         entityManager.merge(orders);
     }
@@ -32,5 +34,10 @@ public class OrdersDao {
 
     public List<Customer> findAllOrders(){
         return entityManager.createQuery("SELECT o FROM Orders o").getResultList();
+    }
+    public List<Orders> findCustomerOrders(long customerId){
+        Query query = entityManager.createQuery("select o from Orders o where o.customer =: customerId");
+        query.setParameter("customerId", customerId);
+        return (List<Orders>) query;
     }
 }

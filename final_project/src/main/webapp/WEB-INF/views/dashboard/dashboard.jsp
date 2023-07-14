@@ -25,13 +25,13 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/orders/list">
-                    <span>Zlecenia</span>
+                    <span>Zamówienia</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/production/list">
-                    <span>Zamówienia</span>
+                    <span>Zlecenia</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
             </li>

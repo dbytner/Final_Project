@@ -51,14 +51,14 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/order/list">
-          <span>Zlecenia</span>
+        <a class="nav-link" href="/orders/list">
+          <span>Zamówienia</span>
           <i class="fas fa-angle-right"></i>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/production/list">
-          <span>Zamówienia</span>
+          <span>Zlecenia</span>
           <i class="fas fa-angle-right"></i>
         </a>
       </li>
@@ -87,7 +87,7 @@
         <form method="get" action="/orders/list">
           <div class="mt-4 ml-4 mr-4">
             <div class="row border-bottom border-3">
-              <div class="col"><h3 class="color-header text-uppercase">Szczegóły kontrahenta</h3></div>
+              <div class="col"><h3 class="color-header text-uppercase">Szczegóły zamówienia</h3></div>
               <div class="col d-flex justify-content-end mb-2">
                 <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Powrót</button>
               </div>

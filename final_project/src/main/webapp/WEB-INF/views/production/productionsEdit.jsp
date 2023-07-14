@@ -85,57 +85,48 @@
 
     <div class="m-4 p-3 width-medium text-color-darker">
       <div class="dashboard-content border-dashed p-3 m-4 view-height">
-        <form method="post" action="/contractors/add">
+        <form method="post" action="/production/edit">
           <div class="mt-4 ml-4 mr-4">
             <div class="row border-bottom border-3">
-              <div class="col"><h3 class="color-header text-uppercase">Nowy kontrahent</h3></div>
+              <div class="col"><h3 class="color-header text-uppercase">Edytuj zlecenie</h3></div>
               <div class="col d-flex justify-content-end mb-2">
                 <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
               </div>
             </div>
-            <form:form modelAttribute="contractors">
-            <table class="table borderless">
-              <tbody>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Nazwa</th>
-                <td class="col-7">
-                  <form:input name="name" class="w-100 p-1" value="" path="name"/>
-                </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Email</th>
-                      <td class="col-7">
-                      <form:input name="email" class="w-100 p-1" value="" path="email"/>
-                      </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Adres</th>
-                          <td class="col-7">
-                          <form:input name="address" class="w-100 p-1" value="" path="address"/>
-                           </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Telefon</th>
-                              <td class="col-7">
-                              <form:input name="phone" class="w-100 p-1" value="" path="phone"/>
-                              </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">NIP</th>
-                <td class="col-7">
-                  <form:input name="nip" class="w-100 p-1" value="" path="nip"/>
-                </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Kontakt</th>
-                <td class="col-7">
-                  <form:input name="poc" class="w-100 p-1" value="" path="poc"/>
-                </td>
-              </tr>
-              </tbody>
-            </table>
+            <form:form modelAttribute="productions">
+              <form:hidden path="id"/>
+              <table class="table borderless">
+                <tbody>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">Nazwa</th>
+                  <td class="col-7">
+                    <form:select path="name" items="${productionsType}" multiple="false"></form:select>
+                  </td>
+                </tr>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">Opis</th>
+                  <td class="col-7">
+                    <form:input name="description" class="w-100 p-1" value="" path="description"/>
+                  </td>
+                </tr>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">Status</th>
+                  <td class="col-7">
+                    <form:select path="status" items="${productionsStatus}" multiple="false"></form:select>
+                  </td>
+                </tr>
+                <tr class="d-flex">
+                  <th scope="row" class="col-2">Klient</th>
+                  <td class="col-7">
+                    <form:select itemLabel="name"
+                                 itemValue="id"
+                                 path="contractors" items="${contractors}"/>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
             </form:form>
-            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -151,4 +142,5 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+
 

@@ -19,7 +19,6 @@ public class Orders {
     private String status;
 
     @ManyToOne
-    @NotNull
     private Customer customer;
 
     public Long getId() {

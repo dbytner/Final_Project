@@ -19,7 +19,6 @@ public class Production {
     private String status;
 
     @ManyToOne
-    @NotNull
     private Contractors contractors;
 
     public Long getId() {
@@ -47,6 +46,7 @@ public class Production {
     }
 
     public Date getCreated() {
+        created = new java.sql.Date(new java.util.Date().getTime());
         return created;
     }
 
@@ -55,6 +55,7 @@ public class Production {
     }
 
     public Date getUpdated() {
+        updated = new java.sql.Date(new java.util.Date().getTime());
         return updated;
     }
 

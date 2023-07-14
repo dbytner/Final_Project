@@ -1,7 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +23,7 @@
       <span>Kaktus</span>
     </a>
     <div class="d-flex justify-content-around">
-      <h4>Imię</h4>
+      <h4 class="text-light mr-3">Imię</h4>
       <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
     </div>
   </nav>
@@ -83,60 +82,28 @@
       </li>
     </ul>
 
-    <div class="m-4 p-3 width-medium text-color-darker">
+    <div class="m-4 p-3 width-medium">
       <div class="dashboard-content border-dashed p-3 m-4 view-height">
-        <form method="post" action="/contractors/add">
-          <div class="mt-4 ml-4 mr-4">
-            <div class="row border-bottom border-3">
-              <div class="col"><h3 class="color-header text-uppercase">Nowy kontrahent</h3></div>
-              <div class="col d-flex justify-content-end mb-2">
-                <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
-              </div>
-            </div>
-            <form:form modelAttribute="contractors">
-            <table class="table borderless">
-              <tbody>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Nazwa</th>
-                <td class="col-7">
-                  <form:input name="name" class="w-100 p-1" value="" path="name"/>
+        <div class="row border-bottom border-3 p-1 m-1">
+          <div class="col noPadding">
+            <h3 class="color-header text-uppercase">KLIENT MA POWIĄZANE ZAMÓWIENIA CZY CHCESZ USUNĄĆ WSZYSTKO</h3>
+        </div>
+
+        <div class="schedules-content">
+          <table class="table border-bottom">
+            <thead>
+
+            <tbody class="text-color-lighter">
+
+              <td class="col-3 d-flex align-items-center justify-content-center flex-wrap">
+                  <a href="/customer/delete2/${customers.id}" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
+                  <a href="/customer/list" class="btn btn-warning rounded-0 text-light m-1">Powrót</a>
                 </td>
               </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Email</th>
-                      <td class="col-7">
-                      <form:input name="email" class="w-100 p-1" value="" path="email"/>
-                      </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Adres</th>
-                          <td class="col-7">
-                          <form:input name="address" class="w-100 p-1" value="" path="address"/>
-                           </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Telefon</th>
-                              <td class="col-7">
-                              <form:input name="phone" class="w-100 p-1" value="" path="phone"/>
-                              </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">NIP</th>
-                <td class="col-7">
-                  <form:input name="nip" class="w-100 p-1" value="" path="nip"/>
-                </td>
-              </tr>
-              <tr class="d-flex">
-                <th scope="row" class="col-2">Kontakt</th>
-                <td class="col-7">
-                  <form:input name="poc" class="w-100 p-1" value="" path="poc"/>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-            </form:form>
-            </div>
-        </form>
+
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -151,4 +118,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-
