@@ -69,26 +69,23 @@ public class CustomerController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable long id, Model model) {
         Customer customer = customerDao.find(id);
-        List<Orders> ordersList = (List<Orders>) ordersRepository.findByCustomer(customer);
+        List<Orders> ordersList = ordersRepository.findByCustomer(customer);
             if(ordersList.size()>0){
                 model.addAttribute("customers", customer);
                 return "customer/deleteError";
             }
-//        for (Orders o: ordersList) {
-//            ordersDao.delete(o);
-//        }
         customerDao.delete(customer);
         return "redirect:/customer/list";
     }
 
-    @GetMapping("/delete2/{id}")
-    public String delete2(@PathVariable long id) {
-        Customer customer = customerDao.find(id);
-        List<Orders> ordersList = (List<Orders>) ordersRepository.findByCustomer(customer);
-        for (Orders o: ordersList) {
-            ordersDao.delete(o);
-        }
-        customerDao.delete(customer);
-        return "redirect:/customer/list";
-    }
+//    @GetMapping("/delete2/{id}")
+//    public String delete2(@PathVariable long id) {
+//        Customer customer = customerDao.find(id);
+//        List<Orders> ordersList = (List<Orders>) ordersRepository.findByCustomer(customer);
+//        for (Orders o: ordersList) {
+//            ordersDao.delete(o);
+//        }
+//        customerDao.delete(customer);
+//        return "redirect:/customer/list";
+//    }
 }

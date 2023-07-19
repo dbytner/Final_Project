@@ -17,8 +17,8 @@
                     <tbody class="text-color-lighter">
 
                     <td class="col-3 d-flex align-items-center justify-content-center flex-wrap">
-                        <a href="/contractors/delete/${contractors.id}" class="btn btn-warning rounded-0 text-light m-1">Potwierdź</a>
-                        <a href="/contractors/list/" class="btn btn-warning rounded-0 text-light m-1">Anuluj</a>
+                        <a href="/customerInvoices/delete/${customerInvoices.id}" class="btn btn-warning rounded-0 text-light m-1">Potwierdź</a>
+                        <a href="/customerInvoices/list/" class="btn btn-warning rounded-0 text-light m-1">Anuluj</a>
                     </td>
                     </tr>
 

@@ -86,26 +86,43 @@
       <div class="dashboard-content border-dashed p-3 m-4 view-height">
         <div class="row border-bottom border-3 p-1 m-1">
           <div class="col noPadding">
-            <h3 class="color-header text-uppercase">KLIENT MA POWIĄZANE ZAMÓWIENIA</h3>
+            <h3 class="color-header text-uppercase">LISTA FAKTUR ZAKUPOWYCH</h3>
+          </div>
+          <div class="col d-flex justify-content-end mb-2 noPadding">
+            <a href="/invoices/add1" class="btn btn-success rounded-0 pt-0 pb-0 pr-4 pl-4">Dodaj fakturę zakupową</a>
+          </div>
         </div>
 
         <div class="schedules-content">
           <table class="table border-bottom">
             <thead>
-
+            <tr class="d-flex">
+              <th class="col-1">ID</th>
+              <th class="col-2">KONTRAHENT</th>
+              <th class="col-2">WARTOŚĆ</th>
+              <th class="col-2">STATUS</th>
+              <th class="col-3 center">AKCJE</th>
+            </tr>
+            </thead>
             <tbody class="text-color-lighter">
-
-              <td class="col-3 d-flex align-items-center justify-content-center flex-wrap">
-                  <a href="/customer/list" class="btn btn-warning rounded-0 text-light m-1">Powrót</a>
+            <c:forEach var="invoice" items="${invoices}">
+              <tr class="d-flex">
+                <td class="col-1">${invoice.id}</td>
+                <td class="col-2">${invoice.contractors.name}</td>
+                <td class="col-2">${invoice.value}</td>
+                <td class="col-2">${invoice.status}</td>
+                <td class="col-3 d-flex align-items-center justify-content-center flex-wrap">
+                  <a href="/invoices/delete-confirm/${invoice.id}" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
+                  <a href="/invoice/edit/${invoice.id}" class="btn btn-warning rounded-0 text-light m-1">Edytuj</a>
+                  <a href="/invoice/details/${invoice.id}" class="btn btn-info rounded-0 text-light m-1">Szczegóły</a>
                 </td>
               </tr>
-
+            </c:forEach>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </section>
 

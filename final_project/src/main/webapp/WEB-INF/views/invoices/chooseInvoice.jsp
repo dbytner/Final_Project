@@ -1,12 +1,39 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="panelheader.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kaktus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700|Open+Sans:400,600,700&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link href='<c:url value="/css/style.css"/>' rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+<header class="page-header">
+    <nav class="navbar navbar-expand-lg justify-content-between">
+        <a href="/" class="navbar-brand main-logo main-logo-smaller">
+            <span>Kaktus</span>
+        </a>
+        <div class="d-flex justify-content-around">
+            <h4 class="text-light mr-3">Imię</h4>
+            <div class="circle-div text-center"><i class="fas fa-user icon-user"></i></div>
+        </div>
+    </nav>
+</header>
+
 <section class="dashboard-section">
     <div class="row dashboard-nowrap">
         <ul class="nav flex-column long-bg">
             <li class="nav-item">
-                <a class="nav-link active" href="/dashboard">
+                <a class="nav-link " href="/">
                     <span>Pulpit</span>
                     <i class="fas fa-angle-right"></i>
                 </a>
@@ -55,44 +82,27 @@
             </li>
         </ul>
 
-        <div class="m-4 p-4 width-medium">
-            <div class="dashboard-header m-4">
-                <div class="dashboard-menu">
-                    <div class="menu-item border-dashed">
-                        <a href="/customer/add">
-                            <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj klienta</span>
-                        </a>
+        <div class="m-4 p-3 width-medium">
+            <div class="dashboard-content border-dashed p-3 m-4 view-height">
+                <div class="row border-bottom border-3 p-1 m-1">
+                    <div class="col noPadding">
+                        <h3 class="color-header text-uppercase">WYBIERZ RODZAJ FAKTURY</h3>
                     </div>
-                    <div class="menu-item border-dashed">
-                        <a href="/customer/add">
-                            <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj kontrahenta</span>
-                        </a>
-                    </div>
-                    <div class="menu-item border-dashed">
-                        <a href="/orders/add">
-                            <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj zamówienie</span>
-                        </a>
-                    </div>
-                    <div class="menu-item border-dashed">
-                        <a href="/production/add">
-                            <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj zlecenie</span>
-                        </a>
-                    </div>
-                    <div class="menu-item border-dashed">
-                        <a href="/invoices/add1">
-                            <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj fakturę sprzedażową</span>
-                        </a>
-                    </div>
-                    <div class="menu-item border-dashed">
-                        <a href="/invoices/add2">
-                            <i class="far fa-plus-square icon-plus-square"></i>
-                            <span class="title">dodaj fakturę zakupową</span>
-                        </a>
+
+                    <div class="schedules-content">
+                        <table class="table border-bottom">
+                            <thead>
+
+                            <tbody class="text-color-lighter">
+
+                            <td class="col-3 d-flex align-items-center justify-content-center flex-wrap">
+                                <a href="/customerInvoices/list" class="btn btn-warning rounded-0 text-light m-1">Sprzedażowa</a>
+                                <a href="/contractorInvoices/list" class="btn btn-warning rounded-0 text-light m-1">Zakupowa</a>
+                            </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

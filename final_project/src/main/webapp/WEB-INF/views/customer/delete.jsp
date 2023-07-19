@@ -2,24 +2,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Kaktus</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700|Open+Sans:400,600,700&amp;subset=latin-ext"
-          rel="stylesheet">
-    <link href='<c:url value="/css/style.css"/>' rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-</head>
-<body>
-<a class="text-color-darker" >
-<span>Czy na pewno chcesz usunąć???</span>
-    <i class="fas fa-angle-right"></i>
-</a>
-<a href="/customer/delete/${customers.id}">Potwierdź</a>
-<a href="/customer/list/">Anuluj</a>
-</body>
+<%@ include file="heaeder.jsp" %>
+<div class="m-4 p-3 width-medium">
+    <div class="dashboard-content border-dashed p-3 m-4 view-height">
+        <div class="row border-bottom border-3 p-1 m-1">
+            <div class="col noPadding">
+                <h3 class="color-header text-uppercase">CZY NA PEWNO CHCESZ USUNĄĆ</h3>
+            </div>
+
+            <div class="schedules-content">
+                <table class="table border-bottom">
+                    <thead>
+
+                    <tbody class="text-color-lighter">
+
+                    <td class="col-3 d-flex align-items-center justify-content-center flex-wrap">
+                        <a href="/customer/delete/${customers.id}" class="btn btn-warning rounded-0 text-light m-1">Potwierdź</a>
+                        <a href="/customer/list/" class="btn btn-warning rounded-0 text-light m-1">Anuluj</a>
+                    </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 </html>

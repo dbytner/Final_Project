@@ -6,52 +6,53 @@
 
     <div class="m-4 p-3 width-medium text-color-darker">
       <div class="dashboard-content border-dashed p-3 m-4 view-height">
-        <form method="post" action="/contractors/edit">
+        <form method="post" action="/customerInvoices/add">
           <div class="mt-4 ml-4 mr-4">
             <div class="row border-bottom border-3">
-              <div class="col"><h3 class="color-header text-uppercase">Edycja kontrahenta</h3></div>
+              <div class="col"><h3 class="color-header text-uppercase">Nowa faktura sprzedażowa</h3></div>
               <div class="col d-flex justify-content-end mb-2">
                 <button type="submit" class="btn btn-color rounded-0 pt-0 pb-0 pr-4 pl-4">Zapisz</button>
               </div>
             </div>
-            <form:form modelAttribute="contractors">
-              <form:hidden path="id"/>
+            <form:form modelAttribute="customerInvoices">
               <table class="table borderless">
                 <tbody>
                 <tr class="d-flex">
-                  <th scope="row" class="col-2">Nazwa</th>
+                  <th scope="row" class="col-2">Numer</th>
                   <td class="col-7">
-                    <form:input name="name" class="w-100 p-1" value="" path="name"/>
+                    <form:input name="number" class="w-100 p-1" value="" path="invoicesNumber"/>
                   </td>
                 </tr>
                 <tr class="d-flex">
-                  <th scope="row" class="col-2">Email</th>
+                  <th scope="row" class="col-2">Typ</th>
                   <td class="col-7">
-                    <form:input name="email" class="w-100 p-1" value="" path="email"/>
+                    <form:select path="type" items="${invoicesType}" multiple="false"></form:select>
                   </td>
                 </tr>
                 <tr class="d-flex">
-                  <th scope="row" class="col-2">Adres</th>
+                  <th scope="row" class="col-2">Wartość</th>
                   <td class="col-7">
-                    <form:input name="address" class="w-100 p-1" value="" path="address"/>
+                    <form:input name="value" class="w-100 p-1" value="" path="value"/>
                   </td>
                 </tr>
                 <tr class="d-flex">
-                  <th scope="row" class="col-2">Telefon</th>
+                  <th scope="row" class="col-2">Status</th>
                   <td class="col-7">
-                    <form:input name="phone" class="w-100 p-1" value="" path="phone"/>
+                    <form:select path="status" items="${invoicesStatus}" multiple="false"></form:select>
                   </td>
                 </tr>
                 <tr class="d-flex">
-                  <th scope="row" class="col-2">NIP</th>
+                  <th scope="row" class="col-2">Termin płatności</th>
                   <td class="col-7">
-                    <form:input name="nip" class="w-100 p-1" value="" path="nip"/>
+                    <form:input name="payment" class="w-100 p-1" value="" path="paymentTime"/>
                   </td>
                 </tr>
                 <tr class="d-flex">
-                  <th scope="row" class="col-2">Kontakt</th>
+                  <th scope="row" class="col-2">Klient</th>
                   <td class="col-7">
-                    <form:input name="poc" class="w-100 p-1" value="" path="poc"/>
+                    <form:select itemLabel="name"
+                                 itemValue="id"
+                                 path="customer" items="${customers}"/>
                   </td>
                 </tr>
                 </tbody>
@@ -73,5 +74,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-
 
