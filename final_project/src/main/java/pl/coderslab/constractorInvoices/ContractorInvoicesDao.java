@@ -34,7 +34,7 @@ public class ContractorInvoicesDao {
         entityManager.remove(entityManager.contains(contractorInvoices) ? contractorInvoices: entityManager.merge(contractorInvoices));
     }
 
-    public List<CustomerInvoices> findAllInvoices(){
+    public List<ContractorInvoices> findAllInvoices(){
         return entityManager.createQuery("SELECT i FROM ContractorInvoices i").getResultList();
     }
     public List<ContractorInvoices> findContractorInvoices(long contractorId){

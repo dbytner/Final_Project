@@ -7,6 +7,6 @@ import pl.coderslab.customers.Customer;
 import java.util.List;
 
 public interface OrdersRepository extends JpaRepository<Orders, Long> {
-    @Query("select o from Orders o where o.customer=?1")
+
     List<Orders> findByCustomer(Customer customer);
 }

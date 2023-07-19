@@ -39,7 +39,7 @@
                   <a href="/contractors/delete-confirm/${contractor.id}" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
                   <a href="/contractors/edit/${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Edytuj</a>
                   <a href="/production/add/${contractor.id}" class="btn btn-info rounded-0 text-light m-1">Dodaj zlecenie</a>
-                  <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Dodaj fakturę</a>
+                  <a href="/contractorInvoices/add/${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Dodaj fakturę</a>
                   <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Zlecenia</a>
                   <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Faktury</a>
                 </td>

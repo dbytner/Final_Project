@@ -39,9 +39,9 @@
                   <a href="/customer/delete-confirm/${customer.id}" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
                   <a href="/customer/edit/${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Edytuj</a>
                   <a href="/orders/add/${customer.id}" class="btn btn-info rounded-0 text-light m-1">Dodaj zamówienie</a>
-                  <a href="/app/recipe/details?id=${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Dodaj fakturę</a>
-                  <a href="/app/recipe/details?id=${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Zamówienia</a>
-                  <a href="/app/recipe/details?id=${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Faktury</a>
+                  <a href="/customerInvoices/add/${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Dodaj fakturę</a>
+                  <a href="/customer/ordersList/${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Zamówienia</a>
+                  <a href="/customer/invoicesList/${customer.id}" class="btn btn-warning rounded-0 text-light m-1">Faktury</a>
                 </td>
               </tr>
             </c:forEach>

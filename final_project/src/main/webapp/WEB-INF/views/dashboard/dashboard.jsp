@@ -65,7 +65,7 @@
                         </a>
                     </div>
                     <div class="menu-item border-dashed">
-                        <a href="/customer/add">
+                        <a href="/contractors/add">
                             <i class="far fa-plus-square icon-plus-square"></i>
                             <span class="title">dodaj kontrahenta</span>
                         </a>
@@ -83,13 +83,13 @@
                         </a>
                     </div>
                     <div class="menu-item border-dashed">
-                        <a href="/invoices/add1">
+                        <a href="/customerInvoices/add">
                             <i class="far fa-plus-square icon-plus-square"></i>
                             <span class="title">dodaj fakturę sprzedażową</span>
                         </a>
                     </div>
                     <div class="menu-item border-dashed">
-                        <a href="/invoices/add2">
+                        <a href="/contractorInvoices/add">
                             <i class="far fa-plus-square icon-plus-square"></i>
                             <span class="title">dodaj fakturę zakupową</span>
                         </a>

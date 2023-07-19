@@ -31,13 +31,13 @@ public class CustomerInvoicesController {
     public String add(@PathVariable long id, Model model) {
         model.addAttribute("customerInvoices", new CustomerInvoices());
         model.addAttribute("customer", customerDao.find(id));
-        return "invoices/invoicesAddCustomer";
+        return "customerInvoices/invoicesAddCustomer";
     }
 
     @PostMapping("/add")
     public String save(CustomerInvoices customerInvoices) {
         customerInvoicesDao.save(customerInvoices);
-        return "redirect:/customerInvoices/invoicesList";
+        return "redirect:/customerInvoices/list";
     }
 
     @GetMapping("/list")
