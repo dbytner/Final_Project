@@ -89,8 +89,8 @@ public class CustomerController {
     public String delete(@PathVariable long id, Model model) {
         Customer customer = customerDao.find(id);
         List<Orders> ordersList = ordersRepository.findByCustomer(customer);
-            if(ordersList.size()>0){
-                model.addAttribute("customers", customer);
+        List<CustomerInvoices> customerInvoicesList = customerInvoicesRepository.findByCustomer(customer);
+            if(ordersList.size()>0 || customerInvoicesList.size()>0){
                 return "customer/deleteError";
             }
         customerDao.delete(customer);

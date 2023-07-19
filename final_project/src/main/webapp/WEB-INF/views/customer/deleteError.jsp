@@ -86,7 +86,7 @@
       <div class="dashboard-content border-dashed p-3 m-4 view-height">
         <div class="row border-bottom border-3 p-1 m-1">
           <div class="col noPadding">
-            <h3 class="color-header text-uppercase">KLIENT MA POWIĄZANE ZAMÓWIENIA</h3>
+            <h3 class="color-header text-uppercase">KLIENT MA POWIĄZANE ZAMÓWIENIA LUB FAKTURY</h3>
         </div>
 
         <div class="schedules-content">

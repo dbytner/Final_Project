@@ -40,8 +40,8 @@
                   <a href="/contractors/edit/${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Edytuj</a>
                   <a href="/production/add/${contractor.id}" class="btn btn-info rounded-0 text-light m-1">Dodaj zlecenie</a>
                   <a href="/contractorInvoices/add/${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Dodaj fakturę</a>
-                  <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Zlecenia</a>
-                  <a href="/app/recipe/details?id=${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Faktury</a>
+                  <a href="/contractors/productionList/${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Zlecenia</a>
+                  <a href="/contractors/invoicesList/${contractor.id}" class="btn btn-warning rounded-0 text-light m-1">Faktury</a>
                 </td>
               </tr>
             </c:forEach>
