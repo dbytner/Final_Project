@@ -1,7 +1,10 @@
 package pl.coderslab.customers;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +15,8 @@ import pl.coderslab.orders.Orders;
 import pl.coderslab.orders.OrdersDao;
 import pl.coderslab.orders.OrdersRepository;
 
+import javax.validation.Valid;
+import javax.validation.Validator;
 import java.util.List;
 
 @Controller
@@ -39,7 +44,11 @@ public class CustomerController {
     }
 
     @PostMapping("/add")
-    public String save(Customer customer) {
+    public String save(@Valid Customer customer, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()){
+            model.addAttribute("customers", customer);
+            return "customer/customerAdd";
+        }
         customerDao.save(customer);
         return "redirect:/customer/list";
     }
@@ -97,14 +106,5 @@ public class CustomerController {
         return "redirect:/customer/list";
     }
 
-//    @GetMapping("/delete2/{id}")
-//    public String delete2(@PathVariable long id) {
-//        Customer customer = customerDao.find(id);
-//        List<Orders> ordersList = (List<Orders>) ordersRepository.findByCustomer(customer);
-//        for (Orders o: ordersList) {
-//            ordersDao.delete(o);
-//        }
-//        customerDao.delete(customer);
-//        return "redirect:/customer/list";
-//    }
+
 }

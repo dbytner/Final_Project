@@ -20,15 +20,17 @@
               <tr class="d-flex">
                 <th scope="row" class="col-2">Nazwa</th>
                 <td class="col-7">
-                  <form:input name="name" class="w-100 p-1" value="" path="name"/>
+                  <form:input name="name" class="w-100 p-1" value="" path="name"/><br/>
+                  <form:errors path="name"/><br/>
                 </td>
               </tr>
               <tr class="d-flex">
                 <th scope="row" class="col-2">Email</th>
                       <td class="col-7">
-                      <form:input name="email" class="w-100 p-1" value="" path="email"/>
+                      <form:input name="email" class="w-100 p-1" value="" path="email"/><br/>
+                      <form:errors name="email" class="w-100 p-1" value="" path="email"/><br/>
                       </td>
-              </tr>
+
               <tr class="d-flex">
                 <th scope="row" class="col-2">Adres</th>
                           <td class="col-7">
@@ -38,7 +40,8 @@
               <tr class="d-flex">
                 <th scope="row" class="col-2">Telefon</th>
                               <td class="col-7">
-                              <form:input name="phone" class="w-100 p-1" value="" path="phone"/>
+                              <form:input name="phone" class="w-100 p-1" value="" path="phone"/><br/>
+                              <form:errors path="phone"/><br/>
                               </td>
               </tr>
               </tbody>

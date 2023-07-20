@@ -83,6 +83,11 @@ public class ContractorsController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable long id) {
         Contractors contractors = contractorsDao.find(id);
+        List<Production> productionList = productionRepository.findByContractors(contractors);
+        List<ContractorInvoices> invoicesList = contractorInvoicesRepository.findByContractors(contractors);
+        if(productionList.size()>0 || invoicesList.size()>0){
+            return "contractors/deleteError";
+        }
         contractorsDao.delete(contractors);
         return "redirect:/contractors/list";
     }

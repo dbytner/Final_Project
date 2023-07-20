@@ -1,6 +1,9 @@
 package pl.coderslab.customers;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 
 @Entity
@@ -9,9 +12,12 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    @NotBlank
     private String name;
+    @Email(message = "Błędny adres email")
     private String email;
     private String address;
+    @Digits(integer = 9, fraction = 0)
     private String phone;
 
 
